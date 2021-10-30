@@ -1,6 +1,6 @@
 {
-  "name": "tax-calculator-pwa",
-  "short_name": "tax-calculator-pwa",
+  "name": "EZ Tax Calculator",
+  "short_name": "Tax Calculator",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
