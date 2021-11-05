@@ -1,9 +1,9 @@
 {
-  "name": "EZ Tax Calculator",
+  "name": "Easy Tax Calculator",
   "short_name": "Tax Calculator",
-  "theme_color": "#1976d2",
+  "theme_color": "#fafafa",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "./",
   "start_url": "./",
   "icons": [
