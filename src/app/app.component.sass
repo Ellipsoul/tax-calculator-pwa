@@ -11,8 +11,19 @@
   margin: 0
   padding: 0
 
+// html, body
+//   height: 100%
+
+// body
+//   margin: 0
+
 // Main parent element using flexbox
 .container
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+
   display: flex
   flex-direction: column
   flex-wrap: nowrap
@@ -25,7 +36,7 @@
 $base-margin-x: calc(0.1rem + 0.3vw)
 $base-margin-y: calc(0.1rem + 0.3vh)
 
-header, footer, body
+header, footer, main
   margin: $base-margin-y $base-margin-x $base-margin-y
   border-radius: 0.5rem
   padding: calc(0.2rem + 0.3vw + 0.3vh)
@@ -38,12 +49,12 @@ header
   flex-grow: 0.5
   border: 1px solid green
 
-body
+main
   flex-grow: 10
 
   display: flex
   flex-direction: row
-  flex-wrap: wrap
+  flex-wrap: nowrap
 
   align-items: stretch
   justify-content: space-evenly
@@ -67,7 +78,7 @@ $flexcol-margin-y: 0.3vh
   border-radius: 0.3rem
 
 @media screen and ( max-width: 768px ) and (orientation: portrait)
-  body
+  main
     flex-direction: column
 
   .inputDiv, .outputDiv
