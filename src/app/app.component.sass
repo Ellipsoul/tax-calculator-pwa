@@ -1,0 +1,79 @@
+:host
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  font-size: 14px
+  color: #333
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+// This setting changes the default padding around an Angular app
+::ng-deep *
+  margin: 0
+  padding: 0
+
+// Main parent element using flexbox
+html
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+
+  min-height: 100vh
+
+  align-items: stretch
+  justify-content: space-evenly
+
+$base-margin-x: calc(0.1rem + 0.3vw)
+$base-margin-y: calc(0.1rem + 0.3vh)
+
+header, footer, body
+  margin: $base-margin-y $base-margin-x $base-margin-y
+  border-radius: 0.5rem
+  padding: calc(0.2rem + 0.3vw + 0.3vh)
+
+  // This might need changing
+  display: grid
+  place-items: center
+
+header
+  flex-grow: 0.5
+  border: 1px solid green
+
+body
+  flex-grow: 10
+
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+
+  align-items: stretch
+  justify-content: space-evenly
+
+  border: 1px solid blue
+
+$flexrow-margin-x: 0.3vw
+$flexrow-margin-y: 0
+
+$flexcol-margin-x: 0
+$flexcol-margin-y: 0.3vh
+
+.inputDiv, .outputDiv
+  flex-grow: 1
+  margin: $flexrow-margin-y $flexrow-margin-x $flexrow-margin-y
+
+  display: grid
+  place-items: center
+
+  border: 1px solid goldenrod
+  border-radius: 0.3rem
+
+@media screen and ( max-width: 768px )
+  body
+    flex-direction: column
+
+  .inputDiv, .outputDiv
+    margin: $flexcol-margin-y $flexcol-margin-x $flexcol-margin-y
+
+
+footer
+  flex-grow: 0.2
+  border: 1px solid red
