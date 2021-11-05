@@ -11,24 +11,19 @@
   margin: 0
   padding: 0
 
-// html, body
-//   height: 100%
-
-// body
-//   margin: 0
-
 // Main parent element using flexbox
 .container
+  // Really important implementation allows container to expand to full screen
   position: absolute
   width: 100%
   top: 0
   left: 0
+  height: 100vh
 
+  // Flex
   display: flex
   flex-direction: column
   flex-wrap: nowrap
-
-  height: 100vh
 
   align-items: stretch
   justify-content: space-evenly
