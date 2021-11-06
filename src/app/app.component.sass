@@ -20,30 +20,39 @@
   left: 0
   height: 100vh
 
-  // Flex
+  // Control the entire app's background with this
+  background-color: #FFFFF0  // Ivory
+
+  // Flex main container vertically
   display: flex
   flex-direction: column
-  flex-wrap: nowrap
+  flex-wrap: nowrap  // Handle flex direction change with media query
 
   align-items: stretch
   justify-content: space-evenly
 
-$base-margin-x: calc(0.1rem + 0.3vw)
+
+// Paddings for 3 mains pieces of container
+$base-margin-x: calc(0.1rem + 0.3vw)  // Do environment variables like this
 $base-margin-y: calc(0.1rem + 0.3vh)
 
 header, footer, main
-  margin: $base-margin-y $base-margin-x $base-margin-y
+  margin: $base-margin-y $base-margin-x  // Top-bottom, then left-right
   border-radius: 0.5rem
   padding: calc(0.2rem + 0.3vw + 0.3vh)
 
-  // This might need changing
+  // This might need changing once items start being placed in the header and footer
   display: grid
   place-items: center
 
+
+// Short header
 header
   flex-grow: 0.5
   border: 1px solid green
 
+
+// Nested flexbox with input and output sections
 main
   flex-grow: 10
 
@@ -56,30 +65,67 @@ main
 
   border: 1px solid blue
 
-$flexrow-margin-x: 0.3vw
-$flexrow-margin-y: 0
-
 $flexcol-margin-x: 0
 $flexcol-margin-y: 0.3vh
 
+// Contains the input and output fields. May need to be separated
 .inputDiv, .outputDiv
+  display: flex
+  flex-direction: column
   flex-grow: 1
-  margin: $flexrow-margin-y $flexrow-margin-x $flexrow-margin-y
 
-  display: grid
-  place-items: center
+  align-items: stretch
+  justify-content: space-evenly
 
   border: 1px solid goldenrod
   border-radius: 0.3rem
 
+// Ensure extra spacing between the inputs and outputs
+.inputDiv
+  margin: 0 2vw 0 0.1vw  // Top right bottom left
+
+.outputDiv
+  margin: 0 0.1vw 0 2vw  // Top right bottom left
+
+// Change the flex direction to accommodate thin screens in portrait mode
 @media screen and ( max-width: 768px ) and (orientation: portrait)
   main
     flex-direction: column
 
-  .inputDiv, .outputDiv
-    margin: $flexcol-margin-y $flexcol-margin-x $flexcol-margin-y
+  // Swap margins values for input and output divs
+  .inputDiv
+    margin: 0.1vh 0 3vh 0  // Top right bottom left
+
+  .outputDiv
+    margin: 3vh 0 0.1vh 0  // Top right bottom left
 
 
+// Lefthand inputs
+.inputs
+  flex-grow: 1
+  margin: 0.2vh 0.1vw // Top-bottom, then left-right
+  border-radius: 0.3rem
+
+  // Change when items are added
+  display: grid
+  place-items: center
+
+  border: 1px solid violet
+
+// Righthand outputs
+.outputs
+  flex-grow: 1
+  margin: 0.2vh 0.1vw // Top-bottom, then left-right
+  border-radius: 0.3rem
+
+  // Change when items are added
+  display: grid
+  place-items: center
+
+  border: 1px solid indigo
+
+
+// Very short footer
 footer
   flex-grow: 0.2
   border: 1px solid red
