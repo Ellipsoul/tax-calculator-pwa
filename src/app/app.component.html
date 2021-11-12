@@ -8,27 +8,10 @@
   <!-- Contains title and global customisations of functionality -->
   <header>Header</header>
 
-
+  <!-- Split Screen for separate UK and US tax calculations -->
   <main>
-
-    <div ngClass="inputDiv">
-      <div ngClass="inputs">Inputs</div>
-      <div ngClass="inputs">Inputs</div>
-      <div ngClass="inputs">Inputs</div>
-      <div ngClass="inputs">Inputs</div>
-      <div ngClass="inputs">Inputs</div>
-      <div ngClass="inputs">Inputs</div>
-    </div>
-
-    <div ngClass="outputDiv">
-      <div ngClass="outputs">Outputs</div>
-      <div ngClass="outputs">Outputs</div>
-      <div ngClass="outputs">Outputs</div>
-      <div ngClass="outputs">Outputs</div>
-      <div ngClass="outputs">Outputs</div>
-      <div ngClass="outputs">Outputs</div>
-    </div>
-
+    <app-uktaxes ngClass="ukContainer"></app-uktaxes>
+    <app-ustaxes ngClass="usContainer"></app-ustaxes>
   </main>
 
   <footer>Footer</footer>

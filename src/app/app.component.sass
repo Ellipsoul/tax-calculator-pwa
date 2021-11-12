@@ -52,7 +52,7 @@ header
   border: 1px solid green
 
 
-// Nested flexbox with input and output sections
+// Nested flexbox with UK and US sections
 main
   flex-grow: 10
 
@@ -65,11 +65,8 @@ main
 
   border: 1px solid blue
 
-$flexcol-margin-x: 0
-$flexcol-margin-y: 0.3vh
-
-// Contains the input and output fields. May need to be separated
-.inputDiv, .outputDiv
+// Container for the UK and US fields
+.ukContainer, .usContainer
   display: flex
   flex-direction: column
   flex-grow: 1
@@ -77,14 +74,11 @@ $flexcol-margin-y: 0.3vh
   align-items: stretch
   justify-content: space-evenly
 
-  border: 1px solid goldenrod
-  border-radius: 0.3rem
-
-// Ensure extra spacing between the inputs and outputs
-.inputDiv
+// Ensure extra spacing between the uk-field and us-field
+.ukContainer
   margin: 0 2vw 0 0.1vw  // Top right bottom left
 
-.outputDiv
+.usContainer
   margin: 0 0.1vw 0 2vw  // Top right bottom left
 
 // Change the flex direction to accommodate thin screens in portrait mode
@@ -92,37 +86,12 @@ $flexcol-margin-y: 0.3vh
   main
     flex-direction: column
 
-  // Swap margins values for input and output divs
-  .inputDiv
+  // Swap margins values for UK and US divs
+  .ukContainer
     margin: 0.1vh 0 3vh 0  // Top right bottom left
 
-  .outputDiv
+  .usContainer
     margin: 3vh 0 0.1vh 0  // Top right bottom left
-
-
-// Lefthand inputs
-.inputs
-  flex-grow: 1
-  margin: 0.2vh 0.1vw // Top-bottom, then left-right
-  border-radius: 0.3rem
-
-  // Change when items are added
-  display: grid
-  place-items: center
-
-  border: 1px solid violet
-
-// Righthand outputs
-.outputs
-  flex-grow: 1
-  margin: 0.2vh 0.1vw // Top-bottom, then left-right
-  border-radius: 0.3rem
-
-  // Change when items are added
-  display: grid
-  place-items: center
-
-  border: 1px solid indigo
 
 
 // Very short footer
