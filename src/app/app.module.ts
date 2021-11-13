@@ -6,10 +6,20 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import { UktaxesComponent } from './uktaxes/uktaxes.component';
 import { UstaxesComponent } from './ustaxes/ustaxes.component';
 
 @NgModule({
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
   declarations: [
     AppComponent,
     UktaxesComponent,
@@ -24,7 +34,10 @@ import { UstaxesComponent } from './ustaxes/ustaxes.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

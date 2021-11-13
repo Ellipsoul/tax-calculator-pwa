@@ -5,7 +5,17 @@
   </div>
   <!-- Input fields for salary, bonus and leave -->
   <div [ngClass]="['uk-field', 'uk-inputs']">
-    Inputs
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi">
+      </mat-form-field>
+
+    <button mat-raised-button color="primary">Hi</button>
+    <button mat-raised-button color="accent">Hi</button>
+    <button mat-raised-button color="warn">Hi</button>
+    <button mat-raised-button color="basic">Hi</button>
+
   </div>
   <!-- Information of reductions, and tax bands -->
   <div [ngClass]="['uk-field', 'uk-info']">
