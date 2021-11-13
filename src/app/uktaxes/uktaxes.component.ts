@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./uktaxes.component.sass']
 })
 export class UktaxesComponent implements OnInit {
+  // Default values for salary
+  salary:number = 50000;
+  bonus:number = 3000;
+  leave:number = 28;
 
   constructor() { }
 

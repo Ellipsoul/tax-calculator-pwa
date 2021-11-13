@@ -1,28 +1,111 @@
 <div ngClass="ukContainer">
   <!-- Header containing name and flag -->
   <div [ngClass]="['uk-field', 'uk-header']">
-    Header
+    🇬🇧 United Kingdom 🇬🇧
   </div>
+
   <!-- Input fields for salary, bonus and leave -->
   <div [ngClass]="['uk-field', 'uk-inputs']">
+    <!-- Single header on left -->
+    <div ngClass="input-header">
+      Enter Income
+    </div>
 
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi">
-      </mat-form-field>
+    <!-- Container for 3 input divs -->
+    <div ngClass="input-container">
+      <!-- Each input div will have one mat-form-field and another emote field -->
+      <div ngClass="input-and-emote">
+        <div class="form__group">
+          <input
+            type="number"
+            min="0"
+            step="500"
+            oninput="validity.valid||(value='');"
+            class="form__field"
+            placeholder={{salary}}
+            name="salary"
+            id='salary'
+            [(ngModel)]="salary"
+            required />
+          <label for="salary" class="form__label">Salary (£)</label>
+        </div>
 
-    <button mat-raised-button color="primary">Hi</button>
-    <button mat-raised-button color="accent">Hi</button>
-    <button mat-raised-button color="warn">Hi</button>
-    <button mat-raised-button color="basic">Hi</button>
+        <div ngClass="emote" [ngSwitch]="true">
+          <ng-container *ngSwitchCase="salary >= 100000">🔥</ng-container>
+          <ng-container *ngSwitchCase="salary >= 50000 && salary < 100000 ">💰</ng-container>
+          <ng-container *ngSwitchCase="salary >= 35000 && salary < 50000">👍</ng-container>
+          <ng-container *ngSwitchCase="salary >= 25000 && salary < 35000">👨‍💼</ng-container>
+          <ng-container *ngSwitchCase="salary >= 15000 && salary < 25000 ">🍔</ng-container>
+          <ng-container *ngSwitchCase="salary < 15000">☠</ng-container>
+          <ng-container *ngSwitchDefault>❓</ng-container>
+        </div>
+      </div>
+
+      <div ngClass="input-and-emote">
+        <div class="form__group">
+        <input
+          type="number"
+          min="0"
+          step="100"
+          class="form__field"
+          placeholder={{bonus}}
+          name="bonus"
+          id='bonus'
+          [(ngModel)]="bonus"
+          required />
+          <label for="bonus" class="form__label">Bonus (£)</label>
+        </div>
+
+        <div ngClass="emote" [ngSwitch]="true">
+          <ng-container *ngSwitchCase="bonus >= 15000">🔥</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 5000 && bonus < 15000 ">💰</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 2000 && bonus < 5000">👍</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 1000 && bonus < 2000">👨‍💼</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 500 && bonus < 1000 ">🍔</ng-container>
+          <ng-container *ngSwitchCase="bonus < 500">☠</ng-container>
+          <ng-container *ngSwitchDefault>❓</ng-container>
+        </div>
+      </div>
+
+      <div ngClass="input-and-emote">
+        <div class="form__group">
+          <input
+            type="number"
+            min="0"
+            class="form__field"
+            placeholder={{leave}}
+            name="leave"
+            id='leave'
+            [(ngModel)]="leave"
+            required />
+          <label for="leave" class="form__label">Leave</label>
+        </div>
+
+        <div ngClass="emote" [ngSwitch]="true">
+          <ng-container *ngSwitchCase="leave > 30">🏖</ng-container>
+          <ng-container *ngSwitchCase="leave >= 21 && leave <= 30">🛫</ng-container>
+          <ng-container *ngSwitchCase="leave >= 10 && leave < 21">🖥</ng-container>
+          <ng-container *ngSwitchCase="leave >= 5 && leave < 10">🔨</ng-container>
+          <ng-container *ngSwitchCase="leave >= 1 && leave < 5 ">😢</ng-container>
+          <ng-container *ngSwitchCase="leave < 1">☠</ng-container>
+          <ng-container *ngSwitchDefault>❓</ng-container>
+        </div>
+      </div>
+    </div>
 
   </div>
+
   <!-- Information of reductions, and tax bands -->
   <div [ngClass]="['uk-field', 'uk-info']">
     Info
   </div>
+
+
   <!-- Output with salary of different time frames -->
   <div [ngClass]="['uk-field', 'uk-outputs']">
-    Outputs
+    <div>{{salary}}</div>
+    <div>{{bonus}}</div>
+    <div>{{leave}}</div>
   </div>
 </div>
+

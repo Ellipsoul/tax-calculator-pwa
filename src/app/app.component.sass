@@ -1,4 +1,5 @@
 :host
+  // CSS looks for the first font that is available to use
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
   font-size: 14px
   color: #333
@@ -49,12 +50,17 @@ header, footer, main
 // Short header
 header
   flex-grow: 0.5
+  flex-basis: 5%
   border: 1px solid green
+
+  font-size: calc(1rem + 1vw + 1vh)
+  font-family: "American Typewriter"
 
 
 // Nested flexbox with UK and US sections
 main
   flex-grow: 10
+  flex-basis: 80%
 
   display: flex
   flex-direction: row
@@ -70,6 +76,8 @@ main
   display: flex
   flex-direction: column
   flex-grow: 1
+  flex-basis: 40%
+  min-width: 40%
 
   align-items: stretch
   justify-content: space-evenly
@@ -88,14 +96,15 @@ main
 
   // Swap margins values for UK and US divs
   .ukContainer
-    margin: 0.1vh 0 3vh 0  // Top right bottom left
+    margin: 0.1vh 0 1vh 0  // Top right bottom left
 
   .usContainer
-    margin: 3vh 0 0.1vh 0  // Top right bottom left
+    margin: 1vh 0 0.1vh 0  // Top right bottom left
 
 
 // Very short footer
 footer
   flex-grow: 0.2
+  flex-basis: 3%
   border: 1px solid red
   margin-bottom: calc(0.5rem + 1vh)
