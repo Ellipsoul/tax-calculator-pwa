@@ -11,9 +11,11 @@ export class UktaxesComponent implements OnInit {
   bonus:number = 2500;
   leave:number = 28;
 
+  // Total compensation calculations
   totalCompYear:number = this.salary + this.bonus;
   totalCompWeek:number = this.totalCompYear / 52;
 
+  // Tax calculations
   income_20:number = 0.2 * Math.min(Math.max(this.totalCompYear - 12570, 0), 50270-12570);
   income_40:number = 0.4 * Math.min(Math.max(this.totalCompYear - 50270, 0), 150000 - 50270);
   income_45:number = 0.45 * Math.max(this.totalCompYear - 150000, 0);
@@ -21,11 +23,12 @@ export class UktaxesComponent implements OnInit {
   nhs_12:number = 0.12 * 52 * Math.min(Math.max(this.totalCompWeek - 184, 0), 967-184);
   nhs_2:number = 0.02 * 52 * Math.max(this.totalCompWeek - 967, 0);
 
+  // Take home salary calculations
   takeHomeYear:number = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_12 - this.nhs_2;
   takeHomeMonth:number = this.takeHomeYear / 12;
   takeHomeWeek:number = this.takeHomeYear / 52;
 
-
+  // Keep all values updated every time a value changes
   updateValues():void {
     this.totalCompYear = this.salary + this.bonus;
     this.totalCompWeek = this.totalCompYear / 52.18;

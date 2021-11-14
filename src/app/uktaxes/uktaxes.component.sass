@@ -18,12 +18,12 @@
   margin: 0.2vh 0.1vw // Top-bottom, then left-right
   border-radius: 0.3rem
 
-  // Change when items are added
   display: flex
   place-items: center
 
   border: 1px solid violet
 
+// Large headere with flag
 .uk-header
   flex-grow: 0.5
   flex-basis: 5%
@@ -34,6 +34,7 @@
   font-size: calc(1rem + 0.8vh + 0.8vw)
   font-family: "Optima"
 
+//  Main container
 .uk-inputs
   flex-grow: 1.5
   flex-basis: 15%
@@ -44,6 +45,7 @@
 
   padding: 5px
 
+// Header prompting user input
 .input-header
   flex-grow: 1
   flex-basis: 15%
@@ -62,6 +64,7 @@
   border-radius: 5px
   border: 1px solid purple
 
+// Container for user inputs and emojis
 .input-container
   flex-grow: 4
   flex-basis: 60%
@@ -76,7 +79,8 @@
   margin: 5px
   border-radius: 5px
 
-.input-and-emote
+// Individual input containers
+.input-and-emoji
   display: flex
   flex-direction: column
 
@@ -88,7 +92,8 @@
   margin: 5px
   border-radius: 5px
 
-.emote
+// Conditional emoji below input
+.emoji
   flex-grow: 1
   flex-basis: 50%
 
@@ -100,7 +105,7 @@
   place-items: center
 
 
-// Input styling
+// Input styling ('borrowed' from the internet since Material is yikes)
 // -----------------------------------------------------------------------
 $primary: #11998e
 $secondary: #38ef7d
@@ -164,6 +169,7 @@ $gray: #9b9b9b
   border-image-slice: 1
 // -----------------------------------------------------------------------
 
+// Large container for tax breakdown information
 .uk-info
   flex-grow: 3
   flex-basis: 30%
@@ -175,7 +181,7 @@ $gray: #9b9b9b
 
   align-items: stretch
 
-
+// Sad header
 .info-header
   flex-grow: 1
   flex-basis: 15%
@@ -186,6 +192,7 @@ $gray: #9b9b9b
   display: flex
   flex-direction: column
 
+// Applies to the text and cloud
 .info-header > div
   flex-grow: 1
   flex-basis: 40%
@@ -202,6 +209,7 @@ $gray: #9b9b9b
 .cry
   font-size: calc(15px + 2vw + 1.5vh)
 
+// Container of tax deduction outputs
 .info-outputs
   flex-grow: 4
   flex-basis: 60%
@@ -215,6 +223,7 @@ $gray: #9b9b9b
   flex-direction: column
   justify-content: stretch
 
+// Container for each individual output
 .output-container
   flex-grow: 2
   flex-basis: 20%
@@ -225,6 +234,7 @@ $gray: #9b9b9b
   border-radius: 5px
   padding: 5px
 
+// Table column headers
 .output-header
   flex-grow: 1
   flex-basis: 10%
@@ -239,12 +249,14 @@ $gray: #9b9b9b
 .smaller-font
   font-size: calc(7px + 0.3vw + 0.5vh) !important
 
+// Emoji representing tax purpose
 .tax-reason
   flex-grow: 0.1
   flex-basis: 3%
   display: grid
   place-items: center
 
+// Percentage tax bands
 .tax-band
   flex-grow: 0.8
   flex-basis: 8%
@@ -259,6 +271,7 @@ $gray: #9b9b9b
 
   margin-left: 10px
 
+// Income ranges for the tax band
 .tax-range
   flex-grow: 2
   flex-basis: 30%
@@ -275,7 +288,8 @@ $gray: #9b9b9b
 .divider-space
   flex-basis: 3%
 
-.after-tax
+// Amount deducted due to the tax band
+.tax-deduction
   flex-grow: 0.8
   flex-basis: 20%
 
@@ -287,7 +301,7 @@ $gray: #9b9b9b
   align-items: center
   text-align: left
 
-
+// Remove tax breakdown display for phones since no space
 @media screen and ( max-width: 425px ) and (orientation: portrait)
   .uk-info
     display: none
@@ -296,6 +310,7 @@ $gray: #9b9b9b
   .uk-info
     display: none
 
+// Take-home compensation container
 .uk-outputs
   flex-grow: 1.5
   flex-basis: 15%
