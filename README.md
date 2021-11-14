@@ -1,27 +1,36 @@
-# TaxCalculatorPwa
+## Easy Tax Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+A simple tax calculator for U.S. and U.K. employees where one can enter their base salary, bonus and days of annual paid leave and see their respective take home salaries by different time frames.
 
-## Development server
+Deployed [here](https://tax-calculator-pwa.vercel.app/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Fun Technologies Used and Learned!
 
-## Code scaffolding
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular](https://angular.io/), my former nemesis
+- [SASS](https://sass-lang.com/) because Pythonic syntax is the best
+- [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) because I discovered these existed
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installing a Progressive Web App
 
-## Build
+- Apparently, these days it's possible to make web apps that are **installable** on native mobile devices!
+- They can be installed directly from the website, without needing to be listed on the App Store or Google Play store
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Installing PWAs on iOS
 
-## Running unit tests
+- Go to the [website](https://tax-calculator-pwa.vercel.app/) using *Safari*
+- Tap on the *share* icon either on the bottom (iPhone) or top-right (iPad) of the screen
+- Scroll down and find the *Add to Home Screen* option
+- Click *Add*, and there you go! It's now installed your phone
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Installing PWAs on Android
 
-## Running end-to-end tests
+Google does the best job of explaining this one, so [enjoy](https://support.google.com/chrome/answer/9658361?hl=en-GB&co=GENIE.Platform%3DAndroid&oco=0)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Advantages of PWAs
 
-## Further help
+- Feel of a native mobile app (no annoying address bar)
+- Works offline because a service worker keeps static components cached
+- App Store can't take a cut of your revenue!
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*Disclaimer*: As of today, the U.S. Tax calculator still only deducts federal tax. Honestly even after a lot of research I still don't understand how taxes work over there... I'll get one of my friends working in U.S. to explain it to me sometime
