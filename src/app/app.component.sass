@@ -32,17 +32,18 @@
   align-items: stretch
   justify-content: space-evenly
 
+  background-color: aliceblue
+
 
 // Paddings for 3 mains pieces of container
 $base-margin-x: calc(0.1rem + 0.3vw)  // Do environment variables like this
 $base-margin-y: calc(0.1rem + 0.3vh)
 
-header, footer, main
+header, main
   margin: $base-margin-y $base-margin-x  // Top-bottom, then left-right
   border-radius: 0.5rem
-  padding: calc(0.3vw + 0.3vh)
+  padding: calc(0.1vw + 0.1vh)
 
-  // This might need changing once items start being placed in the header and footer
   display: grid
   place-items: center
 
@@ -51,10 +52,11 @@ header, footer, main
 header
   flex-grow: 0.5
   flex-basis: 5%
-  border: 1px solid green
 
   font-size: calc(1rem + 1vw + 1vh)
   font-family: "American Typewriter"
+
+  background-color: cornsilk
 
 
 // Nested flexbox with UK and US sections
@@ -69,8 +71,6 @@ main
   align-items: stretch
   justify-content: space-evenly
 
-  border: 1px solid blue
-
 // Container for the UK and US fields
 .ukContainer, .usContainer
   display: flex
@@ -84,10 +84,10 @@ main
 
 // Ensure extra spacing between the uk-field and us-field
 .ukContainer
-  margin: 0 2vw 0 0.1vw  // Top right bottom left
+  margin: 0 1vw 0 0.1vw  // Top right bottom left
 
 .usContainer
-  margin: 0 0.1vw 0 2vw  // Top right bottom left
+  margin: 0 0.1vw 0 1vw  // Top right bottom left
 
 // Change the flex direction to accommodate thin screens in portrait mode
 @media screen and ( max-width: 1024px ) and (orientation: portrait)
@@ -96,15 +96,7 @@ main
 
   // Swap margins values for UK and US divs
   .ukContainer
-    margin: 0.1vh 0 1vh 0  // Top right bottom left
+    margin: 0.1vh 0 0.5vh 0  // Top right bottom left
 
   .usContainer
-    margin: 1vh 0 0.1vh 0  // Top right bottom left
-
-
-// Very short footer
-footer
-  flex-grow: 0.2
-  flex-basis: 3%
-  border: 1px solid red
-  margin-bottom: calc(0.5rem + 1vh)
+    margin: 0.5vh 0 0.1vh 0  // Top right bottom left

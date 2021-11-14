@@ -1,21 +1,197 @@
 <div ngClass="usContainer">
   <!-- Header containing name and flag -->
   <div [ngClass]="['us-field', 'us-header']">
-    Header
+    🇺🇸 United States 🇺🇸
   </div>
+
   <!-- Input fields for salary, bonus and leave -->
   <div [ngClass]="['us-field', 'us-inputs']">
+    <!-- Single header on left -->
     <div ngClass="input-header">
       Enter Income
     </div>
+
+    <!-- Container for 3 input divs -->
+    <div ngClass="input-container">
+      <!-- Each input div will have one mat-form-field and another emoji field -->
+      <div ngClass="input-and-emoji">
+        <!-- Base Salary -->
+        <div class="form__group">
+          <input
+            type="number"
+            min="0"
+            step="1000"
+            class="form__field"
+            placeholder={{salary}}
+            name="salary"
+            id='salary'
+            [(ngModel)]="salary"
+            (input)="updateValues()"
+            required />
+          <label for="salary" class="form__label">Salary ($)</label>
+        </div>
+        <!-- Conditional Emojis -->
+        <div ngClass="emoji" [ngSwitch]="true">
+          <ng-container *ngSwitchCase="salary >= 150000">🔥</ng-container>
+          <ng-container *ngSwitchCase="salary >= 80000 && salary < 150000 ">💰</ng-container>
+          <ng-container *ngSwitchCase="salary >= 50000 && salary < 80000">👍</ng-container>
+          <ng-container *ngSwitchCase="salary >= 35000 && salary < 50000">👨‍💼</ng-container>
+          <ng-container *ngSwitchCase="salary >= 20000 && salary < 35000 ">🍔</ng-container>
+          <ng-container *ngSwitchCase="salary < 20000">☠</ng-container>
+          <ng-container *ngSwitchDefault>❓</ng-container>
+        </div>
+      </div>
+      <!-- Bonus Salary -->
+      <div ngClass="input-and-emoji">
+        <div class="form__group">
+        <input
+          type="number"
+          min="0"
+          step="500"
+          class="form__field"
+          placeholder={{bonus}}
+          name="bonus"
+          id='bonus'
+          [(ngModel)]="bonus"
+          (input)="updateValues()"
+          required />
+          <label for="bonus" class="form__label">Bonus ($)</label>
+        </div>
+        <!-- Conditional Emojis -->
+        <div ngClass="emoji" [ngSwitch]="true">
+          <ng-container *ngSwitchCase="bonus >= 25000">🔥</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 10000 && bonus < 25000 ">💰</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 5000 && bonus < 10000">👍</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 2000 && bonus < 5000">👨‍💼</ng-container>
+          <ng-container *ngSwitchCase="bonus >= 1000 && bonus < 2000 ">🍔</ng-container>
+          <ng-container *ngSwitchCase="bonus < 1000">😢</ng-container>
+          <ng-container *ngSwitchDefault>❓</ng-container>
+        </div>
+      </div>
+      <!-- Annual Leave -->
+      <div ngClass="input-and-emoji">
+        <div class="form__group">
+          <input
+            type="number"
+            min="0"
+            max="100"
+            class="form__field"
+            placeholder={{leave}}
+            name="leave"
+            id='leave'
+            [(ngModel)]="leave"
+            (input)="updateValues()"
+            required />
+          <label for="leave" class="form__label">Leave (d)</label>
+        </div>
+        <!-- Conditional Emojis -->
+        <div ngClass="emoji" [ngSwitch]="true">
+          <ng-container *ngSwitchCase="leave > 30">🏖</ng-container>
+          <ng-container *ngSwitchCase="leave >= 21 && leave <= 30">🛫</ng-container>
+          <ng-container *ngSwitchCase="leave >= 10 && leave < 21">🖥</ng-container>
+          <ng-container *ngSwitchCase="leave >= 5 && leave < 10">🔨</ng-container>
+          <ng-container *ngSwitchCase="leave >= 1 && leave < 5 ">😢</ng-container>
+          <ng-container *ngSwitchCase="leave < 1">☠</ng-container>
+          <ng-container *ngSwitchDefault>❓</ng-container>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Information of reductions, and tax bands -->
+  <!-- Information of reductions, and tax bands. Not rendered on phones -->
   <div [ngClass]="['us-field', 'us-info']">
-    Info
+    <!-- Sad looking header -->
+    <div ngClass="info-header">
+      <div ngClass="taxes">Tax</div>
+      <div ngClass="cloud">⛈</div>
+    </div>
+    <!-- Main container -->
+    <div ngClass="info-outputs">
+      <!-- Table Column Labels -->
+      <div ngClass="output-header">
+        <div [ngClass]="['tax-band', 'smaller-font']">Tax Percent</div>
+        <div [ngClass]="['tax-range', 'smaller-font']">Income Band</div>
+        <div [ngClass]="['tax-deduction', 'smaller-font']">Amount Deducted</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">10%</div>
+        <div ngClass="tax-range">$0 - $10,275</div>
+        <div ngClass="tax-deduction">${{income_10 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">12%</div>
+        <div ngClass="tax-range">$10,275 - $41,775</div>
+        <!-- Decimal pipe rounds to 2 decimal places -->
+        <div ngClass="tax-deduction">${{income_12 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">22%</div>
+        <div ngClass="tax-range">$41,775 - $89,075</div>
+        <div ngClass="tax-deduction">${{income_22 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">24%</div>
+        <div ngClass="tax-range">$89,075 - $170,050</div>
+        <div ngClass="tax-deduction">${{income_24 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">32%</div>
+        <div ngClass="tax-range">$170,050 - $215,950</div>
+        <div ngClass="tax-deduction">{{income_32 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">35%</div>
+        <div ngClass="tax-range">$215,950 - $539,900</div>
+        <div ngClass="tax-deduction">{{income_35 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-band">37%</div>
+        <div ngClass="tax-range">> $539,900</div>
+        <div ngClass="tax-deduction">{{income_37 | number: '.2-2'}}</div>
+      </div>
+    </div>
+
   </div>
+
+
   <!-- Output with salary of different time frames -->
-  <div [ngClass]="['us-field', 'us-outputs']">
-    Outputs
+  <div [ngClass]="['us-field', 'us-results']">
+    <!-- Header with text and emoji -->
+    <div ngClass="result-header">
+      <div ngClass="take-home">Money!</div>
+      <div ngClass="money-bag">💰</div>
+    </div>
+    <!-- Take-Home values by different time-scales -->
+    <div ngClass="result-output">
+      <!-- Yearly -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Annual</div>
+        <div ngClass="tc-value">${{takeHomeYear | number: '.2-2'}}</div>
+      </div>
+      <!-- Monthly -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Monthly</div>
+        <div ngClass="tc-value">${{takeHomeMonth | number: '.2-2'}}</div>
+      </div>
+      <!-- Weekly -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Weekly</div>
+        <div ngClass="tc-value">${{takeHomeWeek | number: '.2-2'}}</div>
+      </div>
+      <!-- Daily (adjusted for leave) -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Daily (Adjusted)</div>
+        <div ngClass="tc-value">${{takeHomeDayAdj | number: '.2-2'}}</div>
+      </div>
+    </div>
   </div>
 </div>
+

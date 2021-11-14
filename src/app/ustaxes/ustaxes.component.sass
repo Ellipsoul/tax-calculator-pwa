@@ -8,25 +8,30 @@
   align-items: stretch
   justify-content: space-evenly
 
-  border: 1px solid goldenrod
-  border-radius: 0.3rem
-  background-color: cornsilk
+  background-color: #ffe2e2
+  border-radius: 2rem
+
 
 // Lefthand us field
 .us-field
   margin: 0.2vh 0.1vw // Top-bottom, then left-right
   border-radius: 0.3rem
 
-  // Change when items are added
   display: flex
   place-items: center
 
-  border: 1px solid violet
-
+// Large headere with flag
 .us-header
   flex-grow: 0.5
   flex-basis: 5%
 
+  display: grid
+  place-items: center
+
+  font-size: calc(1rem + 0.8vh + 0.8vw)
+  font-family: "Optima"
+
+//  Main container
 .us-inputs
   flex-grow: 1.5
   flex-basis: 15%
@@ -37,10 +42,10 @@
 
   padding: 5px
 
-
+// Header prompting user input
 .input-header
   flex-grow: 1
-  flex-basis: 10%
+  flex-basis: 15%
 
   height: 100%
   width: 100%
@@ -54,35 +59,332 @@
   font-weight: bold
 
   border-radius: 5px
-  border: 1px solid purple
 
-
-.inputs
-  flex-grow: 3
-  flex-basis: 50%
+// Container for user inputs and emojis
+.input-container
+  flex-grow: 4
+  flex-basis: 60%
 
   height: 100%
+  column-gap: 0.2vw
 
   display: flex
   flex-direction: row
 
-  border: 1px solid black
   margin: 5px
   border-radius: 5px
 
-// mat-form-field
-//   width: 100%
+// Individual input containers
+.input-and-emoji
+  display: flex
+  flex-direction: column
 
-.input
+  width: 100%
+  height: auto
   flex-grow: 1
-  flex-basis: 10%
+  flex-basis: 30%
 
   margin: 5px
+  border-radius: 5px
 
+// Conditional emoji below input
+.emoji
+  flex-grow: 1
+  flex-basis: 50%
+
+  border-radius: 5px
+  text-align: center
+  font-size: calc(0.8rem + 2vw + 1vh)
+
+  display: grid
+  place-items: center
+
+
+// Input styling ('borrowed' from the internet since Material is yikes)
+// -----------------------------------------------------------------------
+$primary: #11998e
+$secondary: #38ef7d
+$white: #fff
+$gray: #9b9b9b
+.form__group
+  position: relative
+  padding: 15px 0 0
+  margin-top: 10px
+  width: 80%
+
+  flex-grow: 3
+  flex-basis: 60%
+
+.form__field
+  font-family: inherit
+  width: 100%
+  height: 60%
+  border: 0
+  border-bottom: 2px solid $gray
+  outline: 0
+  font-size: calc(10px + 0.5vw)
+  color: black
+  padding: 7px 0
+  padding-left: 0.8vw
+  background: transparent
+  transition: border-color 0.2s
+
+  &::placeholder
+    color: transparent
+
+
+  &:placeholder-shown ~ .form__label
+    font-size: calc(10px + 0.5vw)
+    cursor: text
+    top: 0px
+
+.form__label
+  position: absolute
+  top: 0
+  left: 0.5vw
+  display: block
+  transition: 0.2s
+  font-size: calc(10px + 0.5vw)
+  color: $gray
+
+.form__field:focus
+  ~ .form__label
+    position: absolute
+    top: 0
+    display: block
+    transition: 0.2s
+    font-size: calc(10px + 0.2vw)
+    color: $primary
+    font-weight:700
+
+  padding-bottom: 6px
+  font-weight: 700
+  border-width: 3px
+  border-image: linear-gradient(to right, $primary,$secondary)
+  border-image-slice: 1
+// -----------------------------------------------------------------------
+
+// Large container for tax breakdown information
 .us-info
   flex-grow: 3
   flex-basis: 30%
 
-.us-outputs
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+  padding: calc(0.4vh + 0.2vw)
+
+  align-items: stretch
+
+// Sad header
+.info-header
+  flex-grow: 1
+  flex-basis: 15%
+
+  border-radius: 5px
+
+  display: flex
+  flex-direction: column
+
+// Applies to the text and cloud
+.info-header > div
+  flex-grow: 1
+  flex-basis: 40%
+
+  display: grid
+  place-items: center
+
+  font-weight: bold
+  font-family: "Courier New"
+
+.taxes
+  font-size: calc(15px + 1vw + 0.8vh)
+
+.cloud
+  font-size: calc(15px + 2vw + 1.5vh)
+
+// Container of tax deduction outputs
+.info-outputs
+  flex-grow: 4
+  flex-basis: 60%
+
+  border-radius: 5px
+
+  padding: 3px
+
+  display: flex
+  flex-direction: column
+  justify-content: stretch
+
+// Container for each individual output
+.output-container
+  flex-grow: 2
+  flex-basis: 15%
+
+  display: flex
+  flex-direction: row
+
+  border-radius: 5px
+  padding: 5px
+
+// Table column headers
+.output-header
+  flex-grow: 1
+  flex-basis: 10%
+
+  display: flex
+  flex-direction: row
+
+  border-radius: 5px
+  padding: 5px
+
+.smaller-font
+  font-size: calc(7px + 0.3vw + 0.5vh) !important
+
+// Emoji representing tax purpose
+.tax-reason
+  flex-grow: 0.1
+  flex-basis: 3%
+  display: grid
+  place-items: center
+
+  font-size: calc(3px + 0.5vh + 0.2vw)
+
+// Percentage tax bands
+.tax-band
+  flex-grow: 0.8
+  flex-basis: 8%
+
+  font-size: calc(5px + 0.4vw + 0.8vh)
+  font-family: "American Typewriter"
+  font-weight: 500
+
+  display: grid
+  align-items: center
+  text-align: center
+
+  margin-left: 10px
+
+// Income ranges for the tax band
+.tax-range
+  flex-grow: 2
+  flex-basis: 30%
+
+  font-size: calc(7px + 0.3vw + 0.6vh)
+  font-weight: 500
+  font-family: "Garamond"
+
+  padding-left: 2vw
+  display: grid
+  align-items: center
+  text-align: left
+
+.divider-space
+  flex-basis: 3%
+
+// Amount deducted due to the tax band
+.tax-deduction
+  flex-grow: 0.8
+  flex-basis: 20%
+
+  font-size: calc(8px + 0.3vw + 0.6vh)
+  font-weight: 500
+  font-family: "Copperplate"
+
+  display: grid
+  align-items: center
+  text-align: left
+
+// Remove tax breakdown display for phones since no space
+@media screen and ( max-width: 425px ) and (orientation: portrait)
+  .us-info
+    display: none
+
+@media screen and ( max-height: 425px ) and (orientation: landscape)
+  .us-info
+    display: none
+
+// Take-home compensation container
+.us-results
   flex-grow: 1.5
   flex-basis: 15%
+
+  display: flex
+  flex-direction: row
+  align-items: stretch
+
+  padding: calc(0.4vh + 0.2vw)
+
+// Header for outputs
+.result-header
+  flex-grow: 1
+  flex-basis: 15%
+
+  border-radius: 5px
+
+  display: flex
+  flex-direction: column
+  justify-content: space-evenly
+
+// Applies to the text and cloud
+.result-header > div
+  flex-grow: 1
+  flex-basis: 40%
+
+  display: grid
+  place-items: center
+
+  font-weight: 500
+  font-family: Futura
+
+.take-home
+  font-size: calc(10px + 1vw + 0.8vh)
+
+.money-bag
+  font-size: calc(10px + 2vw + 1.5vh)
+
+// Container with all labels and take-home values
+.result-output
+  flex-grow: 4
+  flex-basis: 60%
+
+  border-radius: 5px
+
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+
+// Container for individual take-home values
+.total-comp
+  flew-grow: 1
+  flex-basis: 22%
+
+  border-radius: 5px
+
+  display: flex
+  flex-direction: column
+  justify-content: space-evenly
+
+.tc-info
+  flex-grow: 1
+  flex-basis: 30%
+
+  display: grid
+  place-items: center
+  text-align: center
+
+  font-family: Futura
+  font-size: calc(2px + 0.8vh + 0.7vw)
+
+.tc-value
+  flex-grow: 1
+  flex-basis: 40%
+
+  display: grid
+  place-items: center
+  text-align: center
+
+  font-family: "American Typewriter"
+  font-weight: 600
+  font-size: calc(1.4vh + 0.7vw)
+

@@ -9,7 +9,7 @@ export class UktaxesComponent implements OnInit {
   // Default values for salary
   salary:number = 50000;
   bonus:number = 2500;
-  leave:number = 28;
+  leave:number = 21;
 
   // Total compensation calculations
   totalCompYear:number = this.salary + this.bonus;
@@ -27,7 +27,7 @@ export class UktaxesComponent implements OnInit {
   takeHomeYear:number = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_12 - this.nhs_2;
   takeHomeMonth:number = this.takeHomeYear / 12;
   takeHomeWeek:number = this.takeHomeYear / 52;
-  // Adjusted for 253 working days - leave days
+  // Adjusted for 253 working days (UK 2022) - leave days
   takeHomeDayAdj:number = this.takeHomeYear / (253 - this.leave);
 
   // Keep all values updated every time a value changes
