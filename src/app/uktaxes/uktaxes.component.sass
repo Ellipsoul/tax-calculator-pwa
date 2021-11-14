@@ -63,7 +63,7 @@
   border: 1px solid purple
 
 .input-container
-  flex-grow: 3
+  flex-grow: 4
   flex-basis: 60%
 
   height: 100%
@@ -167,6 +167,92 @@ $gray: #9b9b9b
 .uk-info
   flex-grow: 3
   flex-basis: 30%
+
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+  padding: calc(0.4vh + 0.2vw)
+
+  align-items: stretch
+
+
+.info-header
+  flex-grow: 1
+  flex-basis: 15%
+
+  border: 1px solid green
+  border-radius: 5px
+
+  display: flex
+  flex-direction: column
+
+.info-header > div
+  flex-grow: 1
+  flex-basis: 40%
+
+  display: grid
+  place-items: center
+
+  font-weight: bold
+  font-family: "Courier New"
+
+.taxes
+  font-size: calc(15px + 1vw + 0.8vh)
+
+.cry
+  font-size: calc(15px + 2vw + 1.5vh)
+
+.info-outputs
+  flex-grow: 4
+  flex-basis: 60%
+
+  border: 1px solid blue
+  border-radius: 5px
+
+  padding: 3px
+
+  display: flex
+  flex-direction: column
+  justify-content: stretch
+
+.output-container
+  flex-grow: 1
+  flex-basis: 20%
+
+  display: flex
+  flex-direction: row
+
+  border: 1px solid black
+  border-radius: 5px
+  padding: 5px
+
+.tax-band
+  flex-grow: 1
+  flex-basis: 15%
+
+  font-size: calc(10px + 0.5vw + 1vh)
+  font-family: "American Typewriter"
+  font-weight: 600
+
+  display: grid
+  place-items: center
+
+.tax-range
+  flex-grow: 2
+  flex-basis: 30%
+
+  font-size: calc(20px + 0.4vw + 0.1vh)
+  font-weight: 550
+  font-family: "Garamond"
+
+  display: grid
+  place-items: center
+  text-align: center
+
+.after-tax
+  flex-grow: 1
+  flex-basis: 25%
+
 
 @media screen and ( max-width: 425px ) and (orientation: portrait)
   .uk-info
