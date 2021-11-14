@@ -143,19 +143,19 @@
         <div ngClass="tax-reason">💰 🇺🇸</div>
         <div ngClass="tax-band">32%</div>
         <div ngClass="tax-range">$170,050 - $215,950</div>
-        <div ngClass="tax-deduction">{{income_32 | number: '.2-2'}}</div>
+        <div ngClass="tax-deduction">${{income_32 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
         <div ngClass="tax-reason">💰 🇺🇸</div>
         <div ngClass="tax-band">35%</div>
         <div ngClass="tax-range">$215,950 - $539,900</div>
-        <div ngClass="tax-deduction">{{income_35 | number: '.2-2'}}</div>
+        <div ngClass="tax-deduction">${{income_35 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
         <div ngClass="tax-reason">💰 🇺🇸</div>
         <div ngClass="tax-band">37%</div>
         <div ngClass="tax-range">> $539,900</div>
-        <div ngClass="tax-deduction">{{income_37 | number: '.2-2'}}</div>
+        <div ngClass="tax-deduction">${{income_37 | number: '.2-2'}}</div>
       </div>
     </div>
 
