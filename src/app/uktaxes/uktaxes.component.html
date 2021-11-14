@@ -74,11 +74,13 @@
           <input
             type="number"
             min="0"
+            max="100"
             class="form__field"
             placeholder={{leave}}
             name="leave"
             id='leave'
             [(ngModel)]="leave"
+            (input)="updateValues()"
             required />
           <label for="leave" class="form__label">Leave (d)</label>
         </div>
@@ -102,7 +104,7 @@
     <!-- Sad looking header -->
     <div ngClass="info-header">
       <div ngClass="taxes">Tax</div>
-      <div ngClass="cry">⛈</div>
+      <div ngClass="cloud">⛈</div>
     </div>
     <!-- Main container -->
     <div ngClass="info-outputs">
@@ -164,8 +166,35 @@
 
 
   <!-- Output with salary of different time frames -->
-  <div [ngClass]="['uk-field', 'uk-outputs']">
-    <div>{{takeHomeYear}}</div>
+  <div [ngClass]="['uk-field', 'uk-results']">
+    <!-- Header with text and emoji -->
+    <div ngClass="result-header">
+      <div ngClass="take-home">Money!</div>
+      <div ngClass="money-bag">💰</div>
+    </div>
+    <!-- Take-Home values by different time-scales -->
+    <div ngClass="result-output">
+      <!-- Yearly -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Annual</div>
+        <div ngClass="tc-value">£{{takeHomeYear | number: '.2-2'}}</div>
+      </div>
+      <!-- Monthly -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Monthly</div>
+        <div ngClass="tc-value">£{{takeHomeMonth | number: '.2-2'}}</div>
+      </div>
+      <!-- Weekly -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Weekly</div>
+        <div ngClass="tc-value">£{{takeHomeWeek | number: '.2-2'}}</div>
+      </div>
+      <!-- Daily (adjusted for leave) -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Daily (Adjusted)</div>
+        <div ngClass="tc-value">£{{takeHomeDayAdj | number: '.2-2'}}</div>
+      </div>
+    </div>
   </div>
 </div>
 

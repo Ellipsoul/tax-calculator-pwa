@@ -27,6 +27,8 @@ export class UktaxesComponent implements OnInit {
   takeHomeYear:number = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_12 - this.nhs_2;
   takeHomeMonth:number = this.takeHomeYear / 12;
   takeHomeWeek:number = this.takeHomeYear / 52;
+  // Adjusted for 253 working days - leave days
+  takeHomeDayAdj:number = this.takeHomeYear / (253 - this.leave);
 
   // Keep all values updated every time a value changes
   updateValues():void {
@@ -41,6 +43,9 @@ export class UktaxesComponent implements OnInit {
     this.nhs_2 = 0.02 * 52 * Math.max(this.totalCompWeek - 967, 0)
 
     this.takeHomeYear = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_12 - this.nhs_2
+    this.takeHomeMonth = this.takeHomeYear / 12;
+    this.takeHomeWeek = this.takeHomeYear / 52;
+    this.takeHomeDayAdj = this.takeHomeYear / (253 - this.leave);
   }
 
   constructor() { }

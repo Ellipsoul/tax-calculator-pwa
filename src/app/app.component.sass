@@ -40,7 +40,7 @@ $base-margin-y: calc(0.1rem + 0.3vh)
 header, footer, main
   margin: $base-margin-y $base-margin-x  // Top-bottom, then left-right
   border-radius: 0.5rem
-  padding: calc(0.2rem + 0.3vw + 0.3vh)
+  padding: calc(0.3vw + 0.3vh)
 
   // This might need changing once items start being placed in the header and footer
   display: grid
@@ -90,7 +90,7 @@ main
   margin: 0 0.1vw 0 2vw  // Top right bottom left
 
 // Change the flex direction to accommodate thin screens in portrait mode
-@media screen and ( max-width: 768px ) and (orientation: portrait)
+@media screen and ( max-width: 1024px ) and (orientation: portrait)
   main
     flex-direction: column
 
