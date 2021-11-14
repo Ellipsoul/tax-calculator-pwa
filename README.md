@@ -10,6 +10,7 @@ Deployed [here](https://tax-calculator-pwa.vercel.app/)
 - [Angular](https://angular.io/), my former nemesis
 - [SASS](https://sass-lang.com/) because Pythonic syntax is the best
 - [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) because I discovered these existed
+- [Vercel CI/CD Deployment](https://vercel.com/)
 
 ### Installing a Progressive Web App
 
