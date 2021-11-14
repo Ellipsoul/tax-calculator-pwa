@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ustaxes',
   templateUrl: './ustaxes.component.html',
-  styleUrls: ['./ustaxes.component.sass']
+  styleUrls: ['./ustaxes.component.sass', './ustaxes2.component.sass']
 })
 export class UstaxesComponent implements OnInit {
   // Default values for salary
