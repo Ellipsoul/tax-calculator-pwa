@@ -25,6 +25,7 @@
             name="salary"
             id='salary'
             [(ngModel)]="salary"
+            (input)="updateValues()"
             required />
           <label for="salary" class="form__label">Salary (£)</label>
         </div>
@@ -51,6 +52,7 @@
           name="bonus"
           id='bonus'
           [(ngModel)]="bonus"
+          (input)="updateValues()"
           required />
           <label for="bonus" class="form__label">Bonus (£)</label>
         </div>
@@ -61,7 +63,7 @@
           <ng-container *ngSwitchCase="bonus >= 2000 && bonus < 5000">👍</ng-container>
           <ng-container *ngSwitchCase="bonus >= 1000 && bonus < 2000">👨‍💼</ng-container>
           <ng-container *ngSwitchCase="bonus >= 500 && bonus < 1000 ">🍔</ng-container>
-          <ng-container *ngSwitchCase="bonus < 500">☠</ng-container>
+          <ng-container *ngSwitchCase="bonus < 500">😢</ng-container>
           <ng-container *ngSwitchDefault>❓</ng-container>
         </div>
       </div>
@@ -119,21 +121,21 @@
         <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">20%</div>
         <div ngClass="tax-range">£12,571 - £50,270</div>
-        <div ngClass="after-tax">£{{salary+bonus}}</div>
+        <div ngClass="after-tax">£{{income_20 | number: '.2-2'}}</div>
       </div>
 
       <div ngClass="output-container">
         <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">40%</div>
         <div ngClass="tax-range">£50,271 - £150,000</div>
-        <div ngClass="after-tax">>£150,000</div>
+        <div ngClass="after-tax">£{{income_40 | number: '.2-2'}}</div>
       </div>
 
       <div ngClass="output-container">
         <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">45%</div>
         <div ngClass="tax-range">> £150,000</div>
-        <div ngClass="after-tax">12000</div>
+        <div ngClass="after-tax">£{{income_45 | number: '.2-2'}}</div>
       </div>
 
       <div ngClass="divider-space"></div>
@@ -142,14 +144,14 @@
         <div ngClass="tax-reason">🏥</div>
         <div ngClass="tax-band">12%</div>
         <div ngClass="tax-range">£184 to £967 /week</div>
-        <div ngClass="after-tax">12000</div>
+        <div ngClass="after-tax">{{nhs_12 | number: '.2-2'}}</div>
       </div>
 
       <div ngClass="output-container">
         <div ngClass="tax-reason">🏥</div>
         <div ngClass="tax-band">2%</div>
         <div ngClass="tax-range">> £967 /week</div>
-        <div ngClass="after-tax">12000</div>
+        <div ngClass="after-tax">{{nhs_2 | number: '.2-2'}}</div>
       </div>
     </div>
 
@@ -158,9 +160,7 @@
 
   <!-- Output with salary of different time frames -->
   <div [ngClass]="['uk-field', 'uk-outputs']">
-    <div>{{salary}}</div>
-    <div>{{bonus}}</div>
-    <div>{{leave}}</div>
+    <div>{{takeHomeYear}}</div>
   </div>
 </div>
 
