@@ -97,32 +97,58 @@
   <!-- Information of reductions, and tax bands -->
   <div [ngClass]="['uk-field', 'uk-info']">
     <div ngClass="info-header">
-      <div ngClass="taxes">Taxes</div>
+      <div ngClass="taxes">Tax</div>
       <div ngClass="cry">⛈</div>
     </div>
 
     <div ngClass="info-outputs">
+      <div ngClass="output-header">
+        <div [ngClass]="['tax-band', 'smaller-font']">Tax Percent</div>
+        <div [ngClass]="['tax-range', 'smaller-font']">Income Band</div>
+        <div [ngClass]="['after-tax', 'smaller-font']">Amount Deducted</div>
+      </div>
+
       <div ngClass="output-container">
+        <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">0%</div>
         <div ngClass="tax-range">£0 - £12,570</div>
-        <div ngClass="after-tax">12000</div>
+        <div ngClass="after-tax">£0</div>
       </div>
 
       <div ngClass="output-container">
+        <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">20%</div>
         <div ngClass="tax-range">£12,571 - £50,270</div>
-        <div ngClass="after-tax">12000</div>
+        <div ngClass="after-tax">£{{salary+bonus}}</div>
       </div>
 
       <div ngClass="output-container">
+        <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">40%</div>
         <div ngClass="tax-range">£50,271 - £150,000</div>
         <div ngClass="after-tax">>£150,000</div>
       </div>
 
       <div ngClass="output-container">
+        <div ngClass="tax-reason">💰</div>
         <div ngClass="tax-band">45%</div>
-        <div ngClass="tax-range">>£150,000</div>
+        <div ngClass="tax-range">> £150,000</div>
+        <div ngClass="after-tax">12000</div>
+      </div>
+
+      <div ngClass="divider-space"></div>
+
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">🏥</div>
+        <div ngClass="tax-band">12%</div>
+        <div ngClass="tax-range">£184 to £967 /week</div>
+        <div ngClass="after-tax">12000</div>
+      </div>
+
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">🏥</div>
+        <div ngClass="tax-band">2%</div>
+        <div ngClass="tax-range">> £967 /week</div>
         <div ngClass="after-tax">12000</div>
       </div>
     </div>
