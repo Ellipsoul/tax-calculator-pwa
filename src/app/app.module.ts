@@ -9,9 +9,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 import { UktaxesComponent } from './uktaxes/uktaxes.component';
 import { UstaxesComponent } from './ustaxes/ustaxes.component';
@@ -19,9 +17,7 @@ import { UstaxesComponent } from './ustaxes/ustaxes.component';
 @NgModule({
   exports: [
     MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule
+    MatIconModule
   ],
   declarations: [
     AppComponent,
@@ -41,9 +37,7 @@ import { UstaxesComponent } from './ustaxes/ustaxes.component';
     // Material Modules
     BrowserAnimationsModule,
     MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

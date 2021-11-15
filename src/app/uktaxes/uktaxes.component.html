@@ -44,17 +44,17 @@
       <!-- Bonus Salary -->
       <div ngClass="input-and-emoji">
         <div class="form__group">
-        <input
-          type="number"
-          min="0"
-          step="100"
-          class="form__field"
-          placeholder={{bonus}}
-          name="bonus"
-          id='bonus'
-          [(ngModel)]="bonus"
-          (input)="updateValues()"
-          required />
+          <input
+            type="number"
+            min="0"
+            step="100"
+            class="form__field"
+            placeholder={{bonus}}
+            name="bonus"
+            id='bonus'
+            [(ngModel)]="bonus"
+            (input)="updateValues()"
+            required />
           <label for="bonus" class="form__label">Bonus (£)</label>
         </div>
         <!-- Conditional Emojis -->
