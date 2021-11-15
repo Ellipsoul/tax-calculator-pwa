@@ -1,7 +1,7 @@
 <div ngClass="usContainer">
   <!-- Header containing name and flag -->
   <div [ngClass]="['us-field', 'us-header']">
-    🇺🇸 United States 🇺🇸
+    🇺🇸 U.S.A (Seattle) 🇺🇸
   </div>
 
   <!-- Input fields for salary, bonus and leave -->
@@ -111,51 +111,63 @@
       <!-- Table Column Labels -->
       <div ngClass="output-header">
         <div [ngClass]="['tax-band', 'smaller-font']">Tax Percent</div>
-        <div [ngClass]="['tax-range', 'smaller-font']">Income Band</div>
+        <div [ngClass]="['tax-range', 'smaller-font', 'center-text']">Income Band</div>
         <div [ngClass]="['tax-deduction', 'smaller-font']">Amount Deducted</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">10%</div>
         <div ngClass="tax-range">$0 - $10,275</div>
         <div ngClass="tax-deduction">${{income_10 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">12%</div>
         <div ngClass="tax-range">$10,275 - $41,775</div>
         <!-- Decimal pipe rounds to 2 decimal places -->
         <div ngClass="tax-deduction">${{income_12 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">22%</div>
         <div ngClass="tax-range">$41,775 - $89,075</div>
         <div ngClass="tax-deduction">${{income_22 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">24%</div>
         <div ngClass="tax-range">$89,075 - $170,050</div>
         <div ngClass="tax-deduction">${{income_24 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">32%</div>
         <div ngClass="tax-range">$170,050 - $215,950</div>
         <div ngClass="tax-deduction">${{income_32 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">35%</div>
         <div ngClass="tax-range">$215,950 - $539,900</div>
         <div ngClass="tax-deduction">${{income_35 | number: '.2-2'}}</div>
       </div>
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 🇺🇸</div>
+        <div ngClass="tax-reason">💰 Federal</div>
         <div ngClass="tax-band">37%</div>
         <div ngClass="tax-range">> $539,900</div>
         <div ngClass="tax-deduction">${{income_37 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">💰 State</div>
+        <div ngClass="tax-band">0%</div>
+        <div ngClass="tax-range">$0 - $&#8734;</div>
+        <div ngClass="tax-deduction">${{income_37 | number: '.2-2'}}</div>
+      </div>
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">🏥 FICA</div>
+        <div ngClass="tax-band">7.65%</div>
+        <div ngClass="tax-range">< $147,000</div>
+        <div ngClass="tax-deduction">${{fica_765 | number: '.2-2'}}</div>
       </div>
     </div>
 

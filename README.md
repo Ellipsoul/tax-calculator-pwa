@@ -12,6 +12,11 @@ Deployed [here](https://tax-calculator-pwa.vercel.app/)
 - [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) because I discovered these existed
 - [Vercel CI/CD Deployment](https://vercel.com/)
 
+### Site Usage
+
+- Just enter your base pre-tax salary and bonus into the provided inputs, as well as your days of leave, and the tax calculations and deductions will updated in real time!
+- They days of paid leave is used to calculate your adjusted daily take home pay. So if you would like to know how much you're bringing home every day of work, taking into account not getting paid when you're on leave, this is the tool for you!
+
 ### Installing a Progressive Web App
 
 - Apparently, these days it's possible to make web apps that are **installable** on native mobile devices!
@@ -34,4 +39,5 @@ Google does the best job of explaining this one, so [enjoy](https://support.goog
 - Works offline because a service worker keeps static components cached
 - App Store can't take a cut of your revenue!
 
-*Disclaimer*: As of today, the U.S. Tax calculator still only deducts federal tax. Honestly even after a lot of research I still don't understand how taxes work over there... I'll get one of my friends working in U.S. to explain it to me sometime
+
+*Disclaimer*: The U.S. Tax system is so complicated that I probably missed some tax in the calculations. Use the U.S. calculator with caution

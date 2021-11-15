@@ -111,19 +111,19 @@
       <!-- Table Column Labels -->
       <div ngClass="output-header">
         <div [ngClass]="['tax-band', 'smaller-font']">Tax Percent</div>
-        <div [ngClass]="['tax-range', 'smaller-font']">Income Band</div>
+        <div [ngClass]="['tax-range', 'smaller-font', 'center-text']">Income Band</div>
         <div [ngClass]="['tax-deduction', 'smaller-font']">Amount Deducted</div>
       </div>
       <!-- Personal allowance -->
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰</div>
+        <div ngClass="tax-reason">💰 Income</div>
         <div ngClass="tax-band">0%</div>
         <div ngClass="tax-range">£0 - £12,570</div>
         <div ngClass="tax-deduction">£0.00</div>
       </div>
       <!-- Basic Rate -->
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰</div>
+        <div ngClass="tax-reason">💰 Income</div>
         <div ngClass="tax-band">20%</div>
         <div ngClass="tax-range">£12,571 - £50,270</div>
         <!-- Decimal pipe rounds to 2 decimal places -->
@@ -131,14 +131,14 @@
       </div>
       <!-- Higher Rate -->
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰</div>
+        <div ngClass="tax-reason">💰 Income</div>
         <div ngClass="tax-band">40%</div>
         <div ngClass="tax-range">£50,271 - £150,000</div>
         <div ngClass="tax-deduction">£{{income_40 | number: '.2-2'}}</div>
       </div>
       <!-- Additional Rate -->
       <div ngClass="output-container">
-        <div ngClass="tax-reason">💰</div>
+        <div ngClass="tax-reason">💰 Income</div>
         <div ngClass="tax-band">45%</div>
         <div ngClass="tax-range">> £150,000</div>
         <div ngClass="tax-deduction">£{{income_45 | number: '.2-2'}}</div>
@@ -148,14 +148,14 @@
 
       <!-- NHS higher rate -->
       <div ngClass="output-container">
-        <div ngClass="tax-reason">🏥</div>
+        <div ngClass="tax-reason">🏥 NHS</div>
         <div ngClass="tax-band">12%</div>
         <div ngClass="tax-range">£184 - £967 /week</div>
         <div ngClass="tax-deduction">£{{nhs_12 | number: '.2-2'}}</div>
       </div>
       <!-- NHS additional rate -->
       <div ngClass="output-container">
-        <div ngClass="tax-reason">🏥</div>
+        <div ngClass="tax-reason">🏥 NHS</div>
         <div ngClass="tax-band">2%</div>
         <div ngClass="tax-range">> £967 /week</div>
         <div ngClass="tax-deduction">£{{nhs_2 | number: '.2-2'}}</div>
