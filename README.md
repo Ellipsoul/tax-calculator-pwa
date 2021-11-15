@@ -15,7 +15,8 @@ Deployed [here](https://tax-calculator-pwa.vercel.app/)
 ### Site Usage
 
 - Just enter your base pre-tax salary and bonus into the provided inputs, as well as your days of leave, and the tax calculations and deductions will updated in real time!
-- They days of paid leave is used to calculate your adjusted daily take home pay. So if you would like to know how much you're bringing home every day of work, taking into account not getting paid when you're on leave, this is the tool for you!
+- There's a handy currency converter on the top right in case you want to compare salaries
+- The days of paid leave is used to calculate your adjusted daily take home pay. So if you would like to know how much cheddar you're hauling home every day of work, taking into account not getting paid when you're on leave, this is the tool for you!
 
 ### Installing a Progressive Web App
 
