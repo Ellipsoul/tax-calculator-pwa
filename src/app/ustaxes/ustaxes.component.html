@@ -188,11 +188,6 @@
         <div ngClass="tc-info">Annual</div>
         <div ngClass="tc-value">${{takeHomeYear | number: '.2-2'}}</div>
       </div>
-      <!-- Monthly -->
-      <div ngClass="total-comp">
-        <div ngClass="tc-info">Monthly</div>
-        <div ngClass="tc-value">${{takeHomeMonth | number: '.2-2'}}</div>
-      </div>
       <!-- Weekly -->
       <div ngClass="total-comp">
         <div ngClass="tc-info">Weekly</div>
@@ -202,6 +197,11 @@
       <div ngClass="total-comp">
         <div ngClass="tc-info">Daily (Adjusted)</div>
         <div ngClass="tc-value">${{takeHomeDayAdj | number: '.2-2'}}</div>
+      </div>
+      <!-- Effective Tax Rate -->
+      <div ngClass="total-comp">
+        <div ngClass="tc-info">Effective Rate</div>
+        <div ngClass="tc-value">{{effectiveTaxRate| number: '.2-2'}}%</div>
       </div>
     </div>
   </div>

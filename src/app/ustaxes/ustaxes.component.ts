@@ -29,10 +29,11 @@ export class UstaxesComponent implements OnInit {
   // Take home salary calculations
   takeHomeYear:number = (this.totalCompYear - this.income_10 - this.income_12 - this.income_22 -
     this.income_24 - this.income_32 - this.income_35 - this.income_37 - this.fica_765);
-  takeHomeMonth:number = this.takeHomeYear / 12;
   takeHomeWeek:number = this.takeHomeYear / 52;
   // Adjusted for 250 working days (2022 US) - leave days
   takeHomeDayAdj:number = this.takeHomeYear / (253 - this.leave);
+  // Effective Tax Rate
+  effectiveTaxRate:number = 100 * (1 - (this.takeHomeYear / this.totalCompYear));
 
   // Keep all values updated every time a value changes
   updateValues():void {
@@ -52,10 +53,11 @@ export class UstaxesComponent implements OnInit {
     // Take home salary calculations
     this.takeHomeYear = (this.totalCompYear - this.income_10 - this.income_12 - this.income_22 -
       this.income_24 - this.income_32 - this.income_35 - this.income_37 - this.fica_765);
-    this.takeHomeMonth = this.takeHomeYear / 12;
     this.takeHomeWeek = this.takeHomeYear / 52;
     // Adjusted for 250 working days (2022 US) - leave days
     this.takeHomeDayAdj = this.takeHomeYear / (253 - this.leave);
+
+    this.effectiveTaxRate = 100 * (1 - (this.takeHomeYear / this.totalCompYear));
   }
 
   constructor() { }
