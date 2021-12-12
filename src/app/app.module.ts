@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { UktaxesComponent } from './uktaxes/uktaxes.component';
 import { UstaxesComponent } from './ustaxes/ustaxes.component';
+import { SgtaxesComponent } from './sgtaxes/sgtaxes.component';
 
 @NgModule({
   exports: [
@@ -22,7 +23,8 @@ import { UstaxesComponent } from './ustaxes/ustaxes.component';
   declarations: [
     AppComponent,
     UktaxesComponent,
-    UstaxesComponent
+    UstaxesComponent,
+    SgtaxesComponent
   ],
   imports: [
     BrowserModule,

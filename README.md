@@ -1,6 +1,6 @@
 ## Easy Tax Calculator
 
-A simple tax calculator for U.S. and U.K. employees where one can enter their base salary, bonus and days of annual paid leave and see their respective take home salaries by different time frames.
+A simple tax calculator for U.S., U.K. and Singapore employees where one can enter their base salary, bonus and days of annual paid leave and see their respective take home salaries by different time frames.
 
 Deployed [here](https://tax-calculator-pwa.vercel.app/)
 

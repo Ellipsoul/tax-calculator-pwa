@@ -20,50 +20,156 @@
     </div>
     <!-- Currency converter -->
     <div ngClass="converter-container">
+      <!-- USD to GBP Container -->
+      <ng-container *ngIf="currentlyDisplayed.includes('UK') && currentlyDisplayed.includes('US')">
+        <button
+          mat-raised-button
+          [color]="GBPUSD ? 'basic' : 'accent'"
+          (click)="toggleConverter()">
+          <mat-icon>rotate_right</mat-icon>
+        </button>
+
+        <div ngClass="converter-input" *ngIf="GBPUSD">
+          <div class="form__group">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="form__field"
+              placeholder={{usuk_gbpInput}}
+              [(ngModel)]="usuk_gbpInput"
+              (input)="updateOutput()"
+              required />
+            <label for="bonus" class="form__label">GBP (£)</label>
+          </div>
+        </div>
+
+        <div ngClass="converter-output" *ngIf="GBPUSD">
+          ${{usuk_usdOutput | number: '.2-2'}}
+        </div>
+
+        <div ngClass="converter-input" *ngIf="!GBPUSD">
+          <div class="form__group">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="form__field"
+              placeholder={{usuk_usdInput}}
+              [(ngModel)]="usuk_usdInput"
+              (input)="updateOutput()"
+              required />
+            <label for="bonus" class="form__label">USD ($)</label>
+          </div>
+        </div>
+
+        <div ngClass="converter-output" *ngIf="!GBPUSD">
+          £{{usuk_gbpOutput | number: '.2-2'}}
+        </div>
+      </ng-container>
+
+      <!-- USD to SGD Converter -->
+      <ng-container *ngIf="currentlyDisplayed.includes('SG') && currentlyDisplayed.includes('US')">
+        <button
+          mat-raised-button
+          [color]="USDSGD ? 'basic' : 'accent'"
+          (click)="toggleConverter()">
+          <mat-icon>rotate_right</mat-icon>
+        </button>
+
+        <div ngClass="converter-input" *ngIf="USDSGD">
+          <div class="form__group">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="form__field"
+              placeholder={{ussg_usdInput}
+              [(ngModel)]="ussg_usdInput"
+              (input)="updateOutput()"
+              required />
+            <label for="bonus" class="form__label">USD ($)</label>
+          </div>
+        </div>
+
+        <div ngClass="converter-output" *ngIf="USDSGD">
+          S${{ussg_sgdOutput | number: '.2-2'}}
+        </div>
+
+        <div ngClass="converter-input" *ngIf="!USDSGD">
+          <div class="form__group">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="form__field"
+              placeholder={{ussg_sgdInput}}
+              [(ngModel)]="ussg_sgdInput"
+              (input)="updateOutput()"
+              required />
+            <label for="bonus" class="form__label">SGD (S$)</label>
+          </div>
+        </div>
+
+        <div ngClass="converter-output" *ngIf="!USDSGD">
+          ${{ussg_usdOutput | number: '.2-2'}}
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="currentlyDisplayed.includes('SG') && currentlyDisplayed.includes('UK')">
+        <button
+          mat-raised-button
+          [color]="GBPSGD ? 'basic' : 'accent'"
+          (click)="toggleConverter()">
+          <mat-icon>rotate_right</mat-icon>
+        </button>
+
+        <div ngClass="converter-input" *ngIf="GBPSGD">
+          <div class="form__group">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="form__field"
+              placeholder={{uksg_gbpInput}
+              [(ngModel)]="uksg_gbpInput"
+              (input)="updateOutput()"
+              required />
+            <label for="bonus" class="form__label">GBP (£)</label>
+          </div>
+        </div>
+
+        <div ngClass="converter-output" *ngIf="GBPSGD">
+          S${{uksg_sgdOutput | number: '.2-2'}}
+        </div>
+
+        <div ngClass="converter-input" *ngIf="!GBPSGD">
+          <div class="form__group">
+            <input
+              type="number"
+              min="0"
+              step="1"
+              class="form__field"
+              placeholder={{uksg_sgdInput}}
+              [(ngModel)]="uksg_sgdInput"
+              (input)="updateOutput()"
+              required />
+            <label for="bonus" class="form__label">SGD (S$)</label>
+          </div>
+        </div>
+
+        <div ngClass="converter-output" *ngIf="!GBPSGD">
+          £{{uksg_gbpOutput | number: '.2-2'}}
+        </div>
+      </ng-container>
+
+
       <button
         mat-raised-button
-        [color]="convertFromGBP ? 'basic' : 'accent'"
-        (click)="toggleConverter()">
+        color='basic'
+        (click)="toggleCountries()">
         <mat-icon>cached</mat-icon>
       </button>
-
-      <div ngClass="converter-input" *ngIf="convertFromGBP">
-        <div class="form__group">
-          <input
-            type="number"
-            min="0"
-            step="1"
-            class="form__field"
-            placeholder={{gbpInput}}
-            [(ngModel)]="gbpInput"
-            (input)="updateOutput()"
-            required />
-          <label for="bonus" class="form__label">GBP (£)</label>
-        </div>
-      </div>
-
-      <div ngClass="converter-output" *ngIf="convertFromGBP">
-        ${{usdOutput | number: '.2-2'}}
-      </div>
-
-      <div ngClass="converter-input" *ngIf="!convertFromGBP">
-        <div class="form__group">
-          <input
-            type="number"
-            min="0"
-            step="1"
-            class="form__field"
-            placeholder={{usdInput}}
-            [(ngModel)]="usdInput"
-            (input)="updateOutput()"
-            required />
-          <label for="bonus" class="form__label">USD ($)</label>
-        </div>
-      </div>
-
-      <div ngClass="converter-output" *ngIf="!convertFromGBP">
-        £{{gbpOutput | number: '.2-2'}}
-      </div>
     </div>
 
 
@@ -73,8 +179,9 @@
 
   <!-- Split Screen for separate UK and US tax calculations -->
   <main>
-    <app-uktaxes ngClass="ukContainer"></app-uktaxes>
-    <app-ustaxes ngClass="usContainer"></app-ustaxes>
+    <app-uktaxes ngClass="ukContainer" *ngIf="currentlyDisplayed.includes('UK')"></app-uktaxes>
+    <app-ustaxes ngClass="usContainer" *ngIf="currentlyDisplayed.includes('US')"></app-ustaxes>
+    <app-sgtaxes ngClass="usContainer" *ngIf="currentlyDisplayed.includes('SG')"></app-sgtaxes>
   </main>
 </div>
 

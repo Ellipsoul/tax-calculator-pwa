@@ -1,0 +1,165 @@
+
+// Contains the sg fields
+.sgContainer
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+
+  align-items: stretch
+  justify-content: space-evenly
+
+  background-color: #b5ffb7
+  border-radius: 2rem
+
+
+// Lefthand sg field
+.sg-field
+  margin: 0.2vh 0.1vw // Top-bottom, then left-right
+  border-radius: 0.3rem
+
+  display: flex
+  place-items: center
+
+// Large headere with flag
+.sg-header
+  flex-grow: 0.5
+  flex-basis: 5%
+
+  display: grid
+  place-items: center
+
+  font-size: calc(1rem + 0.8vh + 0.8vw)
+  font-family: "Optima"
+
+//  Main container
+.sg-inputs
+  flex-grow: 1.5
+  flex-basis: 15%
+
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+
+  padding: 5px
+
+// Header prompting user input
+.input-header
+  flex-grow: 1
+  flex-basis: 15%
+
+  height: 100%
+  width: 100%
+
+  display: grid
+  place-items: center
+
+  text-align: center
+
+  font-size: calc(18px + 0.2vh + 0.8vw)
+  font-weight: bold
+
+  border-radius: 5px
+
+// Container for user inputs and emojis
+.input-container
+  flex-grow: 4
+  flex-basis: 60%
+
+  height: 100%
+  column-gap: 0.2vw
+
+  display: flex
+  flex-direction: row
+
+  margin: 5px
+  border-radius: 5px
+
+// Individual input containers
+.input-and-emoji
+  display: flex
+  flex-direction: column
+
+  width: 100%
+  height: auto
+  flex-grow: 1
+  flex-basis: 30%
+
+  margin: 5px
+  border-radius: 5px
+
+// Conditional emoji below input
+.emoji
+  flex-grow: 1
+  flex-basis: 50%
+
+  border-radius: 5px
+  text-align: center
+  font-size: calc(0.8rem + 2vw + 1vh)
+
+  display: grid
+  place-items: center
+
+
+// Input styling ('borrowed' from the internet since Material is yikes)
+// -----------------------------------------------------------------------
+$primary: #11998e
+$secondary: #38ef7d
+$white: #fff
+$gray: #9b9b9b
+.form__group
+  position: relative
+  padding: 15px 0 0
+  margin-top: 10px
+  width: 80%
+
+  flex-grow: 3
+  flex-basis: 60%
+
+.form__field
+  font-family: inherit
+  width: 100%
+  height: 60%
+  border: 0
+  border-bottom: 2px solid $gray
+  outline: 0
+  font-size: calc(10px + 0.5vw)
+  color: black
+  padding: 7px 0
+  padding-left: 0.8vw
+  background: transparent
+  transition: border-color 0.2s
+
+  &::placeholder
+    color: transparent
+
+
+  &:placeholder-shown ~ .form__label
+    font-size: calc(10px + 0.5vw)
+    cursor: text
+    top: 0px
+
+.form__label
+  position: absolute
+  top: 0
+  left: 0.5vw
+  display: block
+  transition: 0.2s
+  font-size: calc(10px + 0.5vw)
+  color: $gray
+
+.form__field:focus
+  ~ .form__label
+    position: absolute
+    top: 0
+    display: block
+    transition: 0.2s
+    font-size: calc(10px + 0.2vw)
+    color: $primary
+    font-weight:700
+
+  padding-bottom: 6px
+  font-weight: 700
+  border-width: 3px
+  border-image: linear-gradient(to right, $primary,$secondary)
+  border-image-slice: 1
+// -----------------------------------------------------------------------
