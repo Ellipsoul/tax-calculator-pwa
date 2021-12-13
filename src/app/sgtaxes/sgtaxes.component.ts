@@ -27,6 +27,7 @@ export class SgtaxesComponent implements OnInit {
 
   // Total compensation calculations
   totalCompYear:number = this.salary + this.bonus;
+  totalCompMonth:number = this.totalCompYear / 12;
   totalCompWeek:number = this.totalCompYear / 52;
 
   // Tax calculations
@@ -41,9 +42,11 @@ export class SgtaxesComponent implements OnInit {
   income_20:number = 0.20 * Math.min(Math.max(this.totalCompYear - 280_000, 0), 320_000-280_000);
   income_22:number = 0.22 * Math.max(this.totalCompYear - 320_000, 0);
 
+  cpf:number = 0.20 * 12 * Math.min(Math.max(this.totalCompMonth - 750, 0), 6750-750);
+
   // Take home salary calculations
   takeHomeYear:number = (this.totalCompYear - this.income_2 - this.income_3_5 - this.income_7 - this.income_11_5 -
-    this.income_15 - this.income_18 - this.income_19 - this.income_19_5 - this.income_20 - this.income_22);
+    this.income_15 - this.income_18 - this.income_19 - this.income_19_5 - this.income_20 - this.income_22 - this.cpf);
   takeHomeWeek:number = this.takeHomeYear / 52;
   // Adjusted for 253 working days (UK 2022) - leave days
   takeHomeDayAdj:number = this.takeHomeYear / (253 - this.leave);
@@ -54,6 +57,7 @@ export class SgtaxesComponent implements OnInit {
   // Keep all values updated every time a value changes
   updateValues():void {
     this.totalCompYear = this.salary + this.bonus;
+    this.totalCompMonth = this.totalCompYear / 12;
     this.totalCompWeek = this.totalCompYear / 52.18;
 
     this.income_2 = 0.02 * Math.min(Math.max(this.totalCompYear - 20000, 0), 30000-20000);
@@ -67,8 +71,11 @@ export class SgtaxesComponent implements OnInit {
     this.income_20 = 0.20 * Math.min(Math.max(this.totalCompYear - 280_000, 0), 320_000-280_000);
     this.income_22 = 0.22 * Math.max(this.totalCompYear - 320_000, 0);
 
+    this.cpf = 0.20 * 12 * Math.min(Math.max(this.totalCompMonth - 750, 0), 6750-750);
+
     this.takeHomeYear = (this.totalCompYear - this.income_2 - this.income_3_5 - this.income_7 - this.income_11_5 -
-      this.income_15 - this.income_18 - this.income_19 - this.income_19_5 - this.income_20 - this.income_22);
+      this.income_15 - this.income_18 - this.income_19 - this.income_19_5 - this.income_20 - this.income_22 -
+      this.cpf);
     this.takeHomeWeek = this.takeHomeYear / 52;
     this.takeHomeDayAdj = this.takeHomeYear / (253 - this.leave);
 

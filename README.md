@@ -40,5 +40,5 @@ Google does the best job of explaining this one, so [enjoy](https://support.goog
 - Works offline because a service worker keeps static components cached
 - App Store can't take a cut of your revenue!
 
-
 *Disclaimer*: The U.S. Tax system is so complicated that I probably missed some tax in the calculations. Use the U.S. calculator with caution
+*Disclaimer 2*: CPF for Singapore is capped at S$1200/month for base salary, but anything that is considered as 'bonus' salary does not have a cap, and thus 20% of bonus salary is deducted with no cap. This calculator does not take that into account. Also, the CPF is technically not a 'tax' and more of a 'pension', but the main purpose of this calculaor is to figure out how much money one can receive in pocket for a given base salary.

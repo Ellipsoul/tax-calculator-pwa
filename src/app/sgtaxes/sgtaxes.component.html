@@ -114,13 +114,6 @@
         <div [ngClass]="['tax-range', 'smaller-font', 'center-text']">Income Band</div>
         <div [ngClass]="['tax-deduction', 'smaller-font']">Amount Deducted</div>
       </div>
-      <!-- 0% -->
-      <div ngClass="output-container">
-        <div ngClass="tax-reason">💰 Income</div>
-        <div ngClass="tax-band">0%</div>
-        <div ngClass="tax-range">S$0 - S$20,000</div>
-        <div ngClass="tax-deduction">S$0.00</div>
-      </div>
       <!-- 2% -->
       <div ngClass="output-container">
         <div ngClass="tax-reason">💰 Income</div>
@@ -191,6 +184,13 @@
         <div ngClass="tax-band">22%</div>
         <div ngClass="tax-range">> S$320,001</div>
         <div ngClass="tax-deduction">S${{income_22 | number: '.2-2'}}</div>
+      </div>
+      <!-- CPF -->
+      <div ngClass="output-container">
+        <div ngClass="tax-reason">🏥 CPF</div>
+        <div ngClass="tax-band">20%</div>
+        <div ngClass="tax-range">S$750 - S$6000 / month</div>
+        <div ngClass="tax-deduction">S${{cpf | number: '.2-2'}}</div>
       </div>
     </div>
 
