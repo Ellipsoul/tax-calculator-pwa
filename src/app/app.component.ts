@@ -46,11 +46,11 @@ displayedCountries:string[][] = [['UK', 'US'], ['UK', 'SG'], ['US', 'SG']];
     this.usuk_usdOutput = this.usuk_gbpInput * this.GBP_USD;
     this.usuk_gbpOutput = this.usuk_usdInput / this.GBP_USD;
 
-    this.ussg_usdOutput = this.ussg_sgdInput * this.USD_SGD;
-    this.ussg_sgdOutput = this.ussg_usdInput / this.USD_SGD;
+    this.ussg_usdOutput = this.ussg_sgdInput / this.USD_SGD;
+    this.ussg_sgdOutput = this.ussg_usdInput * this.USD_SGD;
 
-    this.uksg_gbpOutput = this.uksg_sgdInput * this.GBP_SGD;
-    this.uksg_sgdOutput = this.uksg_gbpInput / this.GBP_SGD;
+    this.uksg_gbpOutput = this.uksg_sgdInput / this.GBP_SGD;
+    this.uksg_sgdOutput = this.uksg_gbpInput * this.GBP_SGD;
   }
 
   // Changes converter between GBPUSD and GBPUSD
