@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "public": "dist/tax-calculator-pwa",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
