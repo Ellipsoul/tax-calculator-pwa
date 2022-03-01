@@ -13,7 +13,7 @@ displayedCountries:string[][] = [['UK', 'US'], ['UK', 'SG'], ['US', 'SG']];
   currentlyDisplayed = this.displayedCountries[this.currentIndex];
 
   // GBP to USD Converter
-  GBP_USD:number = 1.3239;
+  GBP_USD:number = 1.3318;
 
   usuk_gbpInput:number = 1;
   usuk_usdOutput:number = this.usuk_gbpInput * this.GBP_USD;
@@ -23,7 +23,7 @@ displayedCountries:string[][] = [['UK', 'US'], ['UK', 'SG'], ['US', 'SG']];
   GBPUSD:boolean = true;
 
   // USD to SGD Converter
-  USD_SGD:number = 1.3634656;
+  USD_SGD:number = 1.3581;
 
   ussg_usdInput:number = 1;
   ussg_sgdOutput:number = this.ussg_usdInput * this.USD_SGD;
@@ -33,7 +33,7 @@ displayedCountries:string[][] = [['UK', 'US'], ['UK', 'SG'], ['US', 'SG']];
   USDSGD:boolean = true;
 
   // GBP to SGD Converter
-  GBP_SGD:number = 1.807259;
+  GBP_SGD:number = 1.8087;
 
   uksg_gbpInput:number = 1;
   uksg_sgdOutput:number = this.uksg_gbpInput * this.GBP_SGD;
