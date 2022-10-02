@@ -9,7 +9,7 @@ export class AppComponent {
   title:string = 'tax-calculator-pwa';
 
 displayedCountries:string[][] = [['UK', 'US'], ['UK', 'SG'], ['US', 'SG']];
-  currentIndex:number = 2;
+  currentIndex:number = 0;
   currentlyDisplayed = this.displayedCountries[this.currentIndex];
 
   // GBP to USD Converter
