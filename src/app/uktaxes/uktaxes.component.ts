@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UktaxesComponent implements OnInit {
   // Default values for salary
-  salary:number = 50000;
-  bonus:number = 2500;
-  leave:number = 21;
+  salary:number = 62_000;
+  bonus:number = 18_000;
+  leave:number = 25;
 
   // Total compensation calculations
   totalCompYear:number = this.salary + this.bonus;

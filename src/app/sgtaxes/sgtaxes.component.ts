@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SgtaxesComponent implements OnInit {
   // Default values for salary
-  salary:number = 70000;
-  bonus:number = 10000;
-  leave:number = 15;
+  salary:number = 100_000;
+  bonus:number = 20_000;
+  leave:number = 14;
 
   /*
   <!-- 0%, 20,000 -->
