@@ -20,11 +20,11 @@ export class UktaxesComponent implements OnInit {
   income_40:number = 0.4 * Math.min(Math.max(this.totalCompYear - 50270, 0), 150000 - 50270);
   income_45:number = 0.45 * Math.max(this.totalCompYear - 150000, 0);
 
-  nhs_13_25:number = 0.1325 * 52 * Math.min(Math.max(this.totalCompWeek - 184, 0), 967-184);
-  nhs_3_25:number = 0.0325 * 52 * Math.max(this.totalCompWeek - 967, 0);
+  nhs_12:number = 0.12 * 52 * Math.min(Math.max(this.totalCompWeek - 184, 0), 967-184);
+  nhs_2:number = 0.02 * 52 * Math.max(this.totalCompWeek - 967, 0);
 
   // Take home salary calculations
-  takeHomeYear:number = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_13_25 - this.nhs_3_25;
+  takeHomeYear:number = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_12 - this.nhs_2;
   takeHomeWeek:number = this.takeHomeYear / 52;
   // Adjusted for 253 working days (UK 2022) - leave days
   takeHomeDayAdj:number = this.takeHomeYear / (253 - this.leave);
@@ -41,10 +41,10 @@ export class UktaxesComponent implements OnInit {
     this.income_40 = 0.4 * Math.min(Math.max(this.totalCompYear - 50270, 0), 150000-50270)
     this.income_45 = 0.45 * Math.max(this.totalCompYear - 150000, 0)
 
-    this.nhs_13_25 = 0.1325 * 52 * Math.min(Math.max(this.totalCompWeek - 184, 0), 967-184)
-    this.nhs_3_25 = 0.0325 * 52 * Math.max(this.totalCompWeek - 967, 0)
+    this.nhs_12 = 0.1325 * 52 * Math.min(Math.max(this.totalCompWeek - 184, 0), 967-184)
+    this.nhs_2 = 0.0325 * 52 * Math.max(this.totalCompWeek - 967, 0)
 
-    this.takeHomeYear = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_13_25 - this.nhs_3_25
+    this.takeHomeYear = this.totalCompYear - this.income_20 - this.income_40 - this.income_45 - this.nhs_12 - this.nhs_2
     this.takeHomeWeek = this.takeHomeYear / 52;
     this.takeHomeDayAdj = this.takeHomeYear / (253 - this.leave);
 
